@@ -1,0 +1,54 @@
+version: '3.9'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+
+    container_name: smart-mysql
+
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: smart_energy
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - smart-network
+
+
+  backend:
+    build:
+      context: ../backend
+
+    container_name: smart-backend
+
+    restart: always
+
+    depends_on:
+      - mysql
+
+    ports:
+      - "8081:8081"
+
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/smart_energy
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+    networks:
+      - smart-network
+
+
+volumes:
+  mysql_data:
+
+
+networks:
+  smart-network:
