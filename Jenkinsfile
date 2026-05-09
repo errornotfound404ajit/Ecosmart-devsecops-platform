@@ -2,6 +2,14 @@ pipeline {
 
     agent any
 
+    tools {
+        sonarQube 'sonar-scanner'
+    }
+
+    environment {
+        SONAR_TOKEN = credentials('sonar-token')
+    }
+
     stages {
 
         stage('Build Backend') {
@@ -11,6 +19,26 @@ pipeline {
 
                 dir('backend') {
                     sh 'mvn clean install -DskipTests'
+                }
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+
+                echo 'Running SonarQube Analysis...'
+
+                dir('backend') {
+
+                    withSonarQubeEnv('sonarqube') {
+
+                        sh '''
+                        mvn sonar:sonar \
+                        -Dsonar.projectKey=smart-backend \
+                        -Dsonar.host.url=http://host.docker.internal:9000 \
+                        -Dsonar.login=$SONAR_TOKEN
+                        '''
+                    }
                 }
             }
         }
