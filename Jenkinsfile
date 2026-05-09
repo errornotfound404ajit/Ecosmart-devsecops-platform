@@ -1,24 +1,66 @@
 pipeline {
+
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Build Backend') {
             steps {
-                echo 'Building project...'
-                bat 'mvn clean package -DskipTests'
+
+                echo 'Building Backend Application...'
+
+                dir('backend') {
+                    sh 'mvn clean install -DskipTests'
+                }
             }
         }
 
-        stage('Test') {
+        stage('Build Frontend') {
             steps {
-                echo 'Running tests...'
+
+                echo 'Building Frontend Application...'
+
+                dir('frontend') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
             }
         }
 
-        stage('Deploy') {
+        stage('Build Backend Docker Image') {
             steps {
-                echo 'Deploying application...'
+
+                echo 'Building Backend Docker Image...'
+
+                dir('backend') {
+                    sh 'docker build -t smart-backend:v1 .'
+                }
             }
         }
+
+        stage('Build Frontend Docker Image') {
+            steps {
+
+                echo 'Building Frontend Docker Image...'
+
+                dir('frontend') {
+                    sh 'docker build -t smart-frontend:v1 .'
+                }
+            }
+        }
+
     }
+
+    post {
+
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+
+        failure {
+            echo 'Pipeline failed!'
+        }
+
+    }
+
 }
