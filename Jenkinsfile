@@ -66,6 +66,16 @@ pipeline {
             }
         }
 
+        stage('Trivy Backend Image Scan') {
+            steps {
+
+        echo 'Running Trivy Security Scan on Backend Image...'
+
+        sh '''
+        trivy image --severity HIGH,CRITICAL smart-backend:v1
+        '''
+            }
+}
         stage('Build Frontend Docker Image') {
             steps {
 
