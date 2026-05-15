@@ -1,0 +1,38 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/errornotfound404ajit/Smart.git'
+            }
+        }
+
+        stage('Terraform Init') {
+            steps {
+                dir('terraform-aws') {
+                    sh 'terraform init'
+                }
+            }
+        }
+
+        stage('Terraform Validate') {
+            steps {
+                dir('terraform-aws') {
+                    sh 'terraform validate'
+                }
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                dir('terraform-aws') {
+                    sh 'terraform plan'
+                }
+            }
+        }
+    }
+}
