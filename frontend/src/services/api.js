@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-// Use absolute URL in development for direct connection, relative path in production
-const API_BASE_URL = import.meta.env.PROD ? '/api' : 'http://localhost:8080/api';
+const API_BASE_URL = '/api';
 
 const api = axios.create({
     baseURL: API_BASE_URL,
+
     headers: {
         'Content-Type': 'application/json',
     },

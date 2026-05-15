@@ -1,0 +1,78 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+
+metadata:
+  name: backend-alerts
+  namespace: monitoring
+
+  labels:
+    release: monitoring
+
+spec:
+  groups:
+    - name: backend.rules
+
+      rules:
+        - alert: BackendPodDown
+
+          expr: up{job="backend-service"} == 0
+
+          for: 1m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: "Backend pod is down"
+
+            description: "Backend service has been unreachable for more than 1 minute."
+        - alert: HighBackendCPU
+
+          expr: process_cpu_usage * 100 > 80
+ 
+          for: 2m
+
+          labels:
+            severity: warning
+
+          annotations:
+              summary: "High backend CPU usage"
+
+              description: "Backend CPU usage exceeded 80% for more than 2 minutes."
+
+        - alert: HighErrorBurnRate
+
+          expr: backend:error_ratio > 0.05
+
+          for: 2m
+
+          labels:
+            severity: critical
+
+          annotations:
+              summary: "High backend error burn rate"
+
+              description: "Backend error ratio exceeded 5% for more than 2 minutes."
+
+
+
+        - alert: BackendMultiWindowBurnRate
+
+          expr: |
+              (
+               backend:error_ratio_1m > 0.05
+               )
+              and
+              (
+              backend:error_ratio_15m > 0.02
+              )
+
+          for: 2m
+
+          labels:
+            severity: critical
+
+          annotations:
+             summary: "Backend multi-window burn rate detected"
+
+             description: "Short-term and sustained backend error rates exceeded thresholds."
