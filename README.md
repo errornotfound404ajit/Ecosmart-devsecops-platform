@@ -1,4 +1,4 @@
-# 🚀 Enterprise DevSecOps Smart Home Management Platform
+# 🚀 EcoSmart — Enterprise Smart Home Energy Management DevSecOps Platform
 
 A complete end-to-end cloud-native DevSecOps project implementing CI/CD automation, Infrastructure as Code (IaC), Kubernetes orchestration, monitoring, logging, security scanning, and automated deployment pipelines using modern DevOps tools and practices.
 
