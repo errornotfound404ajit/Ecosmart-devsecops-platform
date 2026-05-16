@@ -486,53 +486,53 @@ Grafana Visualizes Logs
 
 ## 🚀 Jenkins CI/CD Pipeline
 
-![Jenkins Dashboard](docs/screenshots/jenkins/08-jenkins-dashboard.png)
+![Jenkins Dashboard](docs/screenshots/jenkins/08-ecosmart-jenkins-dashboard.png)
 
-![Jenkins Pipeline](docs/screenshots/jenkins/09-jenkins-pipeline-success.png)
+![Jenkins Pipeline](docs/screenshots/jenkins/09-ecosmart-jenkins-pipeline-success.png)
 
 ---
 
 ## ☸️ Kubernetes Cluster
 
-![Kubernetes Pods](docs/screenshots/kubernetes/04-kubernetes-pods.png)
+![Kubernetes Pods](docs/screenshots/kubernetes/04-ecosmart-kubernetes-pods.png)
 
-![Kubernetes Services](docs/screenshots/kubernetes/05-kubernetes-services.png)
+![Kubernetes Services](docs/screenshots/kubernetes/05-ecosmart-kubernetes-services.png)
 
-![Kubernetes Deployments](docs/screenshots/kubernetes/06-kubernetes-deployments.png)
+![Kubernetes Deployments](docs/screenshots/kubernetes/06-ecosmart-kubernetes-deployments.png)
 
-![Kubernetes Ingress](docs/screenshots/kubernetes/07-kubernetes-ingress.png)
+![Kubernetes Ingress](docs/screenshots/kubernetes/07-ecosmart-kubernetes-ingress.png)
 
 ---
 
 ## 📊 Monitoring & Observability
 
-![Grafana Dashboard](docs/screenshots/grafana/10-grafana-dashboard.png)
+![Grafana Dashboard](docs/screenshots/grafana/10-ecosmart-grafana-dashboard.png)
 
-![Prometheus Targets](docs/screenshots/monitoring/13-prometheus-targets.png)
+![Prometheus Targets](docs/screenshots/monitoring/13-ecosmart-prometheus-targets.png)
 
-![Alertmanager](docs/screenshots/monitoring/15-alertmanager.png)
+![Alertmanager](docs/screenshots/monitoring/15-ecosmart-alertmanager.png)
 
-![Loki Logs](docs/screenshots/logging/17-loki-logs.png)
+![Loki Logs](docs/screenshots/logging/17-ecosmart-loki-logs.png)
 
 ---
 
 ## 🔐 DevSecOps Security
 
-![SonarQube](docs/screenshots/security/20-sonarqube-dashboard.png)
+![SonarQube](docs/screenshots/security/20-ecosmart-sonarqube-dashboard.png)
 
-![OWASP Report](docs/screenshots/security/24-owasp-report.png)
+![OWASP Report](docs/screenshots/security/24-ecosmart-owasp-report.png)
 
-![Trivy Scan](docs/screenshots/security/23-trivy-scan.png)
+![Trivy Scan](docs/screenshots/security/23-ecosmart-trivy-scan.png)
 
 ---
 
 ## ☁️ AWS Infrastructure & Terraform
 
-![Terraform Plan](docs/screenshots/terraform/25-terraform-plan.png)
+![Terraform Plan](docs/screenshots/terraform/25-ecosmart-terraform-plan.png)
 
-![Terraform Apply](docs/screenshots/terraform/26-terraform-apply.png)
+![Terraform Apply](docs/screenshots/terraform/26-ecosmart-terraform-apply.png)
 
-![AWS EC2](docs/screenshots/aws/27-aws-ec2.png)
+![AWS EC2](docs/screenshots/aws/27-ecosmart-aws-ec2.png)
 
 ---
 
