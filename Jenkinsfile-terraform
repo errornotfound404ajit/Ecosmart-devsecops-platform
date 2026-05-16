@@ -39,5 +39,19 @@ pipeline {
                 }
             }
         }
+
+        stage('Approval') {
+            steps {
+               input 'Approve Terraform Apply?'
+            }
+        }
+
+        stage('Terraform Apply') {
+             steps {
+                dir('terraform-aws') {
+                   sh 'terraform apply -auto-approve'
+                }
+            }
+        }
     }
 }
