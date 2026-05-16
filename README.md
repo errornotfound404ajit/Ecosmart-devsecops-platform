@@ -34,3 +34,114 @@ This project was designed to simulate a real-world enterprise DevSecOps environm
 ![Loki](https://img.shields.io/badge/Loki-Logging-0A84FF?style=for-the-badge)
 ![Trivy](https://img.shields.io/badge/Trivy-Security-blue?style=for-the-badge)
 ![SonarQube](https://img.shields.io/badge/SonarQube-Code%20Quality-4E9BCD?style=for-the-badge&logo=sonarqube)
+
+# 🏗️ System Architecture
+
+The project follows a complete cloud-native DevSecOps workflow integrating CI/CD automation, Infrastructure as Code, Kubernetes orchestration, security scanning, monitoring, and centralized logging.
+
+---
+
+## 🔄 End-to-End DevSecOps Workflow
+
+```text
+Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker Build → Terraform Infrastructure → Kubernetes Deployment → Monitoring & Logging
+```
+
+---
+
+## 📐 Architecture Diagram
+
+```text
+                                ┌────────────────────┐
+                                │     Developer      │
+                                └─────────┬──────────┘
+                                          │
+                                          ▼
+                                ┌────────────────────┐
+                                │      GitHub        │
+                                │ Source Code Mgmt   │
+                                └─────────┬──────────┘
+                                          │ Webhook Trigger
+                                          ▼
+                                ┌────────────────────┐
+                                │      Jenkins       │
+                                │    CI/CD Server    │
+                                └─────────┬──────────┘
+                                          │
+              ┌───────────────────────────┼───────────────────────────┐
+              │                           │                           │
+              ▼                           ▼                           ▼
+     ┌────────────────┐        ┌──────────────────┐        ┌─────────────────┐
+     │   SonarQube    │        │ OWASP Dependency │        │      Trivy      │
+     │ Code Analysis  │        │      Check       │        │ Security Scan   │
+     └────────────────┘        └──────────────────┘        └─────────────────┘
+                                          │
+                                          ▼
+                                ┌────────────────────┐
+                                │   Docker Build     │
+                                │  Containerization  │
+                                └─────────┬──────────┘
+                                          │
+                                          ▼
+                                ┌────────────────────┐
+                                │     Terraform      │
+                                │ Infrastructure IaC │
+                                └─────────┬──────────┘
+                                          │
+                                          ▼
+                        ┌────────────────────────────────┐
+                        │             AWS                │
+                        │ EC2 | S3 | DynamoDB | IAM     │
+                        └────────────────────────────────┘
+                                          │
+                                          ▼
+                           ┌─────────────────────────┐
+                           │      Kubernetes         │
+                           │        Minikube         │
+                           └──────────┬──────────────┘
+                                      │
+         ┌────────────────────────────┼────────────────────────────┐
+         │                            │                            │
+         ▼                            ▼                            ▼
+ ┌───────────────┐         ┌─────────────────┐         ┌─────────────────┐
+ │   Frontend    │         │     Backend     │         │      MySQL      │
+ │ React + Vite  │         │ Spring Boot API │         │    Database     │
+ └───────────────┘         └─────────────────┘         └─────────────────┘
+                                      │
+                                      ▼
+                     ┌────────────────────────────────┐
+                     │        Monitoring Stack        │
+                     │ Prometheus + Grafana           │
+                     │ Alertmanager + Metrics Server  │
+                     └────────────────────────────────┘
+                                      │
+                                      ▼
+                     ┌────────────────────────────────┐
+                     │         Logging Stack          │
+                     │       Loki + Promtail          │
+                     └────────────────────────────────┘
+```
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Languages | Java, JavaScript |
+| Backend Framework | Spring Boot |
+| Frontend Framework | React + Vite |
+| Build Tools | Maven, npm |
+| Containerization | Docker, Docker Compose, NGINX |
+| Container Orchestration | Kubernetes, Minikube |
+| CI/CD | Jenkins, GitHub Webhooks |
+| Infrastructure as Code | Terraform |
+| Cloud Provider | AWS |
+| AWS Services | EC2, S3, DynamoDB, IAM, Security Groups |
+| Monitoring | Prometheus, Grafana, Alertmanager |
+| Logging | Loki, Promtail |
+| Security | Trivy, SonarQube, OWASP Dependency Check |
+| Scaling | HPA, Metrics Server |
+| Database | MySQL |
+| Networking | NGINX Ingress Controller, Ngrok |
+| Project Management | Jira |
