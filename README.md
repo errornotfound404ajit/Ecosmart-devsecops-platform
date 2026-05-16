@@ -145,3 +145,198 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 | Database | MySQL |
 | Networking | NGINX Ingress Controller, Ngrok |
 | Project Management | Jira |
+
+
+# ✨ Key Features
+
+## 🚀 CI/CD Automation
+- Automated Jenkins pipeline execution
+- GitHub webhook-triggered deployments
+- Continuous Integration & Continuous Deployment workflow
+- Automated Docker image builds
+- Automated Kubernetes deployments
+
+---
+
+## ☁️ Infrastructure as Code (IaC)
+- Terraform-based AWS infrastructure provisioning
+- Remote Terraform state management using S3
+- State locking using DynamoDB
+- Modular Terraform architecture
+- Automated EC2 provisioning
+
+---
+
+## 🐳 Containerization & Orchestration
+- Dockerized backend and frontend services
+- Kubernetes-based container orchestration
+- NGINX Ingress Controller integration
+- Kubernetes deployments, services, and ingress management
+- Horizontal Pod Autoscaler (HPA) implementation
+
+---
+
+## 🔐 DevSecOps & Security
+- SonarQube static code analysis
+- Trivy container image vulnerability scanning
+- OWASP Dependency Check integration
+- Secure secret handling using Kubernetes Secrets
+- Automated security scanning in CI/CD pipeline
+
+---
+
+## 📊 Monitoring & Observability
+- Prometheus metrics collection
+- Grafana dashboard visualization
+- Spring Boot Actuator integration
+- Loki centralized logging
+- Promtail log collection
+- Alertmanager alert management
+- Kubernetes metrics monitoring
+
+---
+
+## 📦 Cloud & Deployment
+- AWS EC2 deployment
+- S3 backend storage for Terraform state
+- DynamoDB state locking
+- Kubernetes-based deployment architecture
+- Scalable cloud-native infrastructure
+
+# 📁 Project Structure
+
+```text
+Smart/
+│
+├── backend/                         # Spring Boot backend application
+├── frontend/                        # React + Vite frontend application
+│
+├── kubernetes/                      # Kubernetes manifests
+│   ├── backend/
+│   ├── frontend/
+│   ├── ingress/
+│   ├── monitoring/
+│   └── mysql/
+│
+├── terraform/                       # Terraform Docker provisioning
+├── terraform-aws/                   # Terraform AWS infrastructure
+│   └── modules/
+│       └── ec2/
+│
+├── docs/                            # Project documentation
+│   ├── architecture/
+│   ├── diagrams/
+│   ├── monitoring/
+│   ├── pipeline/
+│   ├── security/
+│   ├── setup-guides/
+│   └── screenshots/
+│
+├── Jenkinsfile                      # CI/CD pipeline definition
+├── docker-compose.yml               # Local multi-container setup
+├── README.md                        # Main project documentation
+└── .gitignore
+```
+
+
+# 🔄 CI/CD Pipeline Workflow
+
+The project implements a fully automated Jenkins-based CI/CD pipeline integrated with GitHub webhooks.
+
+---
+
+## 🚀 Pipeline Flow
+
+```text
+Developer Pushes Code
+        ↓
+GitHub Repository
+        ↓
+GitHub Webhook Trigger
+        ↓
+Jenkins Pipeline Starts
+        ↓
+Code Checkout
+        ↓
+Backend Build (Maven)
+        ↓
+Frontend Build (npm/vite)
+        ↓
+SonarQube Code Analysis
+        ↓
+OWASP Dependency Check
+        ↓
+Docker Image Build
+        ↓
+Trivy Security Scan
+        ↓
+Terraform Infrastructure Provisioning
+        ↓
+Kubernetes Deployment
+        ↓
+Monitoring & Logging Integration
+```
+
+---
+
+## ⚙️ Jenkins Pipeline Stages
+
+| Stage | Purpose |
+|---|---|
+| Checkout | Pull latest code from GitHub |
+| Backend Build | Build Spring Boot application |
+| Frontend Build | Build React/Vite frontend |
+| SonarQube Analysis | Static code quality scanning |
+| Dependency Check | Dependency vulnerability analysis |
+| Docker Build | Build application container images |
+| Trivy Scan | Container vulnerability scanning |
+| Terraform Init | Initialize Terraform backend |
+| Terraform Plan | Infrastructure planning |
+| Terraform Apply | Infrastructure provisioning |
+| Kubernetes Deploy | Deploy workloads to Kubernetes |
+| Monitoring Integration | Prometheus/Grafana monitoring |
+
+
+# 🔐 DevSecOps Security Workflow
+
+Security was integrated throughout the CI/CD lifecycle following DevSecOps best practices.
+
+---
+
+## 🛡️ Security Implementations
+
+### 🔎 SonarQube Static Code Analysis
+- Code quality inspection
+- Bug detection
+- Code smell identification
+- Security hotspot analysis
+- Quality Gate enforcement
+
+---
+
+### 🚨 OWASP Dependency Check
+- Dependency vulnerability analysis
+- CVE identification
+- Supply chain security scanning
+- Vulnerable package detection
+
+---
+
+### 🐳 Trivy Container Scanning
+- Docker image vulnerability scanning
+- OS package scanning
+- Secret scanning
+- Misconfiguration detection
+
+---
+
+### 🔑 Kubernetes Security
+- Kubernetes Secrets for sensitive data
+- Namespace isolation
+- Secure container deployment practices
+
+---
+
+## 🔄 Shift-Left Security
+
+Security scanning is integrated directly into the CI/CD pipeline before deployment, ensuring vulnerabilities are detected early in the software delivery lifecycle.
