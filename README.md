@@ -614,3 +614,309 @@ terraform plan
 ```bash
 terraform apply
 ```
+
+# 📸 Project Screenshots
+
+## 🚀 Jenkins CI/CD Pipeline
+
+### Jenkins Dashboard
+
+![Jenkins Dashboard](docs/screenshots/jenkins/08-jenkins-dashboard.png)
+
+---
+
+### Successful CI/CD Pipeline Execution
+
+![Jenkins Pipeline](docs/screenshots/jenkins/09-jenkins-pipeline-success.png)
+
+---
+
+## ☸️ Kubernetes Cluster
+
+### Kubernetes Pods
+
+![Kubernetes Pods](docs/screenshots/kubernetes/04-kubernetes-pods.png)
+
+---
+
+### Kubernetes Services
+
+![Kubernetes Services](docs/screenshots/kubernetes/05-kubernetes-services.png)
+
+---
+
+### Kubernetes Deployments
+
+![Kubernetes Deployments](docs/screenshots/kubernetes/06-kubernetes-deployments.png)
+
+---
+
+### Kubernetes Ingress
+
+![Kubernetes Ingress](docs/screenshots/kubernetes/07-kubernetes-ingress.png)
+
+---
+
+### Horizontal Pod Autoscaler (HPA)
+
+![HPA](docs/screenshots/kubernetes/18-hpa-scaling.png)
+
+---
+
+## 📊 Monitoring & Observability
+
+### Grafana Dashboard
+
+![Grafana Dashboard](docs/screenshots/grafana/10-grafana-dashboard.png)
+
+---
+
+### JVM Monitoring Dashboard
+
+![JVM Dashboard](docs/screenshots/grafana/11-grafana-jvm-dashboard.png)
+
+---
+
+### Kubernetes Metrics Dashboard
+
+![Kubernetes Metrics](docs/screenshots/grafana/12-grafana-k8s-metrics.png)
+
+---
+
+### Prometheus Targets
+
+![Prometheus Targets](docs/screenshots/monitoring/13-prometheus-targets.png)
+
+---
+
+### Alertmanager
+
+![Alertmanager](docs/screenshots/monitoring/15-alertmanager.png)
+
+---
+
+### Loki Logs
+
+![Loki Logs](docs/screenshots/logging/17-loki-logs.png)
+
+---
+
+## 🔐 DevSecOps Security
+
+### SonarQube Dashboard
+
+![SonarQube](docs/screenshots/security/20-sonarqube-dashboard.png)
+
+---
+
+### SonarQube Quality Gate
+
+![SonarQube Quality Gate](docs/screenshots/security/21-sonarqube-quality-gate.png)
+
+---
+
+### OWASP Dependency Check Report
+
+![OWASP Report](docs/screenshots/security/24-owasp-report.png)
+
+---
+
+### Trivy Vulnerability Scan
+
+![Trivy Scan](docs/screenshots/security/23-trivy-scan.png)
+
+---
+
+## ☁️ AWS Infrastructure & Terraform
+
+### Terraform Plan
+
+![Terraform Plan](docs/screenshots/terraform/25-terraform-plan.png)
+
+---
+
+### Terraform Apply
+
+![Terraform Apply](docs/screenshots/terraform/26-terraform-apply.png)
+
+---
+
+### AWS EC2 Instance
+
+![AWS EC2](docs/screenshots/aws/27-aws-ec2.png)
+
+---
+
+### AWS S3 Backend
+
+![AWS S3](docs/screenshots/aws/28-aws-s3-backend.png)
+
+---
+
+### DynamoDB State Locking
+
+![DynamoDB](docs/screenshots/aws/29-aws-dynamodb-lock.png)
+
+---
+
+## 🌐 Application UI
+
+### Frontend Application
+
+![Frontend UI](docs/screenshots/frontend/37-frontend-ui.png)
+
+---
+
+### Backend Health Endpoint
+
+![Backend Health](docs/screenshots/backend/38-backend-health.png)
+
+---
+# 🚀 Deployment Guide
+## 📦 Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/Smart.git
+cd Smart
+```
+
+---
+
+## 🐳 Start Docker
+
+Ensure Docker Desktop is running before proceeding.
+
+Verify Docker:
+
+```bash
+docker ps
+```
+
+---
+
+## ☸️ Start Minikube
+
+```bash
+minikube start --driver=docker
+```
+
+Verify cluster:
+
+```bash
+kubectl get nodes
+```
+
+---
+
+## 🚀 Enable Kubernetes Addons
+
+```bash
+minikube addons enable ingress
+minikube addons enable metrics-server
+```
+
+## ☸️ Deploy Kubernetes Resources
+
+```bash
+kubectl apply -R -f kubernetes/
+```
+
+Verify workloads:
+
+```bash
+kubectl get pods -A
+```
+
+---
+
+## 🌐 Access Frontend
+
+```bash
+kubectl port-forward svc/frontend-service 8081:80 -n smart-devops
+```
+
+Open:
+
+```text
+http://localhost:8081
+```
+
+---
+
+## 🔍 Access Backend Health Endpoint
+
+```bash
+kubectl port-forward svc/backend-service 8085:8081 -n smart-devops
+```
+
+Open:
+
+```text
+http://localhost:8085/actuator/health
+```
+
+# 📊 Monitoring Setup
+
+## 🚀 Install Monitoring Stack
+
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo update
+
+kubectl create namespace monitoring
+
+helm install monitoring prometheus-community/kube-prometheus-stack -n monitoring
+```
+
+---
+
+## 📈 Access Grafana
+
+```bash
+kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 📉 Access Prometheus
+
+```bash
+kubectl port-forward -n monitoring svc/prometheus-operated 9091:9090
+```
+
+Open:
+
+```text
+http://localhost:9091
+```
+
+# 📝 Logging Setup
+
+## 🚀 Install Loki Stack
+
+```bash
+helm repo add grafana https://grafana.github.io/helm-charts
+
+helm repo update
+
+helm install loki grafana/loki-stack -n monitoring
+```
+
+---
+
+## 🔍 View Logs in Grafana
+
+Open Grafana Explore and select Loki datasource.
+
+Example LogQL query:
+
+```logql
+{namespace="smart-devops"}
+```
