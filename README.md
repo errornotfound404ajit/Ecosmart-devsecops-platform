@@ -920,3 +920,173 @@ Example LogQL query:
 ```logql
 {namespace="smart-devops"}
 ```
+# 🛠️ Troubleshooting Guide
+
+## ❌ Kubernetes Pods Stuck in Pending
+
+### Verify cluster status
+
+```bash
+kubectl get nodes
+kubectl get pods -A
+```
+
+### Restart Minikube
+
+```bash
+minikube stop
+minikube start --driver=docker
+```
+
+---
+
+## ❌ Grafana Dashboard Not Accessible
+
+### Verify monitoring namespace
+
+```bash
+kubectl get pods -n monitoring
+```
+
+### Restart port-forward
+
+```bash
+kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
+```
+
+---
+
+## ❌ Prometheus Targets Down
+
+### Verify ServiceMonitor
+
+```bash
+kubectl get servicemonitor -A
+```
+
+### Reapply monitoring manifests
+
+```bash
+kubectl apply -f kubernetes/monitoring/
+```
+
+---
+
+## ❌ Jenkins Pipeline Failure
+
+### Verify Jenkins logs
+
+```bash
+kubectl logs deployment/jenkins
+```
+
+### Restart Jenkins deployment
+
+```bash
+kubectl rollout restart deployment jenkins
+```
+
+---
+
+## ❌ Docker Image Pull Issues
+
+### Verify local Docker images
+
+```bash
+docker images
+```
+
+### Load image into Minikube
+
+```bash
+minikube image load IMAGE_NAME
+```
+
+---
+
+## ❌ Terraform Backend Errors
+
+### Reinitialize Terraform
+
+```bash
+terraform init -reconfigure
+```
+
+### Verify AWS credentials
+
+```bash
+aws configure
+```
+
+---
+
+## ❌ Loki Logs Not Visible
+
+### Verify Loki & Promtail
+
+```bash
+kubectl get pods -n monitoring
+```
+
+### Reinstall Loki stack
+
+```bash
+helm install loki grafana/loki-stack -n monitoring
+```
+
+# 🚀 Future Enhancements
+- Deploy application on managed Kubernetes clusters (EKS)
+- Implement GitHub Actions workflow
+- Add ArgoCD GitOps deployment
+- Integrate HashiCorp Vault for secrets management
+- Configure SSL/TLS using cert-manager
+- Add Redis caching layer
+- Implement centralized tracing using Jaeger
+- Add Slack/Email alert integrations
+- Implement blue-green and canary deployments
+- Add Kubernetes Network Policies
+- Deploy using Helm charts
+- Integrate Falco runtime security
+- Add Kubernetes RBAC hardening
+- Configure autoscaling using custom metrics
+- Multi-environment deployment strategy (Dev/Staging/Prod)
+
+
+# 📚 Lessons Learned
+- Learned end-to-end DevSecOps workflow implementation
+- Gained hands-on experience with Kubernetes orchestration
+- Understood Infrastructure as Code using Terraform
+- Implemented real-world CI/CD pipelines using Jenkins
+- Integrated security scanning into CI/CD lifecycle
+- Learned cloud-native monitoring and observability practices
+- Implemented centralized Kubernetes logging
+- Understood Docker containerization workflows
+- Configured Kubernetes ingress and networking
+- Learned Terraform remote state management
+- Implemented Kubernetes autoscaling using HPA
+- Gained troubleshooting experience across cloud-native systems
+
+# 👨‍💻 Author
+## Ajit
+
+DevOps & Cloud Engineering Enthusiast passionate about:
+
+- DevOps Automation
+- Kubernetes
+- Cloud Infrastructure
+- Infrastructure as Code
+- Monitoring & Observability
+- DevSecOps
+- CI/CD Automation
+- Cloud-Native Engineering
+
+---
+
+## 📫 Connect With Me
+
+- GitHub: https://github.com/errornotfound404ajit
+
+
+---
+
+# ⭐ If you found this project helpful, consider giving it a star!
