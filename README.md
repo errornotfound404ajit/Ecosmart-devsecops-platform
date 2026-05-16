@@ -340,3 +340,277 @@ Security was integrated throughout the CI/CD lifecycle following DevSecOps best 
 ## 🔄 Shift-Left Security
 
 Security scanning is integrated directly into the CI/CD pipeline before deployment, ensuring vulnerabilities are detected early in the software delivery lifecycle.
+
+
+# 📊 Monitoring & Observability
+
+The project implements a complete cloud-native observability stack for monitoring application health, Kubernetes workloads, infrastructure metrics, and centralized logging.
+
+---
+
+## 📈 Monitoring Stack
+
+| Tool | Purpose |
+|---|---|
+| Prometheus | Metrics collection |
+| Grafana | Metrics visualization |
+| Alertmanager | Alert handling & routing |
+| Spring Boot Actuator | Application health & metrics |
+| Micrometer | Prometheus metrics integration |
+| kube-state-metrics | Kubernetes object metrics |
+| Metrics Server | Kubernetes resource metrics |
+| HPA | Horizontal pod autoscaling |
+
+---
+
+## 🔍 Metrics Collected
+
+### Application Metrics
+- JVM memory usage
+- CPU utilization
+- HTTP request count
+- Request latency
+- Active threads
+- Garbage collection metrics
+
+---
+
+### Kubernetes Metrics
+- Pod health
+- Deployment status
+- Resource utilization
+- Node metrics
+- Cluster health
+
+---
+
+## 🚨 Alerting
+
+Prometheus Alert Rules and Alertmanager were configured to monitor:
+
+- Service availability
+- Pod health
+- Kubernetes target failures
+- Resource usage thresholds
+- Backend service downtime
+
+---
+
+## 📉 Grafana Dashboards
+
+Grafana dashboards were created for:
+
+- JVM monitoring
+- Kubernetes monitoring
+- Application performance metrics
+- Resource utilization
+- Prometheus targets
+- Infrastructure observability
+
+
+
+# 📝 Centralized Logging
+
+The project implements centralized Kubernetes logging using Loki and Promtail.
+
+---
+
+## 📦 Logging Stack
+
+| Tool | Purpose |
+|---|---|
+| Loki | Log aggregation |
+| Promtail | Log collection agent |
+| Grafana | Log visualization |
+
+---
+
+## 🔄 Logging Workflow
+
+```text
+Kubernetes Pods
+        ↓
+Promtail Collects Logs
+        ↓
+Loki Stores Logs
+        ↓
+Grafana Visualizes Logs
+```
+
+---
+
+## 📌 Log Sources
+
+Logs are collected from:
+
+- Spring Boot backend containers
+- Frontend containers
+- Kubernetes workloads
+- Cluster services
+
+---
+
+## 🔍 Log Analysis
+
+Grafana Explore was used for:
+
+- Pod log inspection
+- Backend troubleshooting
+- Kubernetes debugging
+- Error tracking
+- Runtime observability
+
+# ☸️ Kubernetes Deployment
+
+The application was deployed using Kubernetes on Minikube with production-style deployment architecture.
+
+---
+
+## 📦 Kubernetes Components
+
+| Resource | Purpose |
+|---|---|
+| Deployments | Application workload management |
+| Services | Internal networking |
+| Ingress | External traffic routing |
+| ConfigMaps | Environment configuration |
+| Secrets | Sensitive data management |
+| HPA | Automatic pod scaling |
+
+---
+
+## 🚀 Workloads Deployed
+
+- Frontend Deployment
+- Backend Deployment
+- MySQL Deployment
+- Jenkins Deployment
+- Monitoring Stack
+- Logging Stack
+
+---
+
+## 🌐 Ingress Controller
+
+NGINX Ingress Controller was used for:
+
+- HTTP routing
+- Reverse proxy
+- External application access
+- Path-based routing
+
+---
+
+## 📈 Horizontal Pod Autoscaler (HPA)
+
+HPA was configured to automatically scale backend pods based on CPU utilization metrics.
+
+---
+
+## 🔍 Kubernetes Commands
+
+### View Pods
+
+```bash
+kubectl get pods -A
+```
+
+### View Services
+
+```bash
+kubectl get svc -A
+```
+
+### View Deployments
+
+```bash
+kubectl get deployments -A
+```
+
+### View Ingress
+
+```bash
+kubectl get ingress -A
+```
+
+
+# ☁️ Infrastructure as Code (Terraform + AWS)
+
+Terraform was used to provision and manage AWS cloud infrastructure following Infrastructure as Code (IaC) best practices.
+
+---
+
+## 🏗️ AWS Services Used
+
+| AWS Service | Purpose |
+|---|---|
+| EC2 | Application infrastructure |
+| S3 | Remote Terraform state storage |
+| DynamoDB | Terraform state locking |
+| IAM | Cloud access management |
+| Security Groups | Network security |
+
+---
+
+## 📦 Terraform Features Implemented
+
+- Modular Terraform architecture
+- Remote state backend
+- State locking with DynamoDB
+- Dynamic security group rules
+- EC2 provisioning automation
+- Infrastructure version control
+
+---
+
+## 🔄 Terraform Workflow
+
+```text
+Terraform Init
+        ↓
+Terraform Validate
+        ↓
+Terraform Plan
+        ↓
+Terraform Apply
+        ↓
+AWS Infrastructure Provisioned
+```
+
+---
+
+## 🔒 Remote State Management
+
+Terraform remote backend was configured using:
+
+- S3 bucket for centralized state storage
+- DynamoDB table for state locking
+- Encrypted Terraform state management
+
+---
+
+## 📌 Terraform Commands
+
+### Initialize Terraform
+
+```bash
+terraform init
+```
+
+### Validate Configuration
+
+```bash
+terraform validate
+```
+
+### Plan Infrastructure
+
+```bash
+terraform plan
+```
+
+### Apply Infrastructure
+
+```bash
+terraform apply
+```
