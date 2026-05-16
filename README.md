@@ -1,9 +1,29 @@
-# 🚀 EcoSmart — Cloud-Native Enterprise DevSecOps Platform
+# 🚀# 🚀 EcoSmart — Cloud-Native Enterprise DevSecOps Platform
 
 A complete end-to-end cloud-native DevSecOps project implementing CI/CD automation, Infrastructure as Code (IaC), Kubernetes orchestration, monitoring, logging, security scanning, and automated deployment pipelines using modern DevOps tools and practices.
 
 ---
 
+## 📌 Project Overview
+
+This project demonstrates a production-grade DevSecOps workflow for deploying and managing a Smart Home Management application using enterprise-level tools and cloud-native technologies.
+
+The platform integrates:
+
+- CI/CD automation with Jenkins
+- Infrastructure provisioning using Terraform
+- Containerization with Docker
+- Kubernetes orchestration with Minikube
+- Monitoring with Prometheus & Grafana
+- Logging with Loki & Promtail
+- Security scanning using Trivy, SonarQube, and OWASP Dependency Check
+- AWS cloud infrastructure deployment
+- Automated scaling using HPA
+- GitHub webhook-triggered deployment pipelines
+
+This project was designed to simulate a real-world enterprise DevSecOps environment.
+
+---
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-623CE4?style=for-the-badge&logo=terraform)
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazonaws)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?style=for-the-badge&logo=kubernetes)
@@ -15,34 +35,6 @@ A complete end-to-end cloud-native DevSecOps project implementing CI/CD automati
 ![Trivy](https://img.shields.io/badge/Trivy-Security-blue?style=for-the-badge)
 ![SonarQube](https://img.shields.io/badge/SonarQube-Code%20Quality-4E9BCD?style=for-the-badge&logo=sonarqube)
 
----
-
-# 🌐 EcoSmart Platform Preview
-
-![EcoSmart UI](docs/screenshots/frontend/37-ecosmart-frontend-ui.png)
-
----
-
-# 📌 Project Overview
-
-EcoSmart is an enterprise-grade Smart Home Energy Management platform designed to simulate a real-world cloud-native DevSecOps ecosystem.
-
-The project demonstrates the complete lifecycle of modern DevSecOps practices including:
-
-- CI/CD automation using Jenkins
-- Infrastructure provisioning using Terraform
-- Kubernetes orchestration using Minikube
-- Docker containerization
-- DevSecOps security integration
-- Centralized logging and monitoring
-- Cloud infrastructure deployment on AWS
-- Automated observability stack implementation
-- Production-style Kubernetes deployments
-- GitHub webhook-triggered automation
-
-The platform was built to replicate enterprise-level DevOps, SRE, Platform Engineering, and DevSecOps workflows.
-
----
 
 # 📑 Table of Contents
 
@@ -57,17 +49,18 @@ The platform was built to replicate enterprise-level DevOps, SRE, Platform Engin
 - [Kubernetes Deployment](#️-kubernetes-deployment)
 - [Infrastructure as Code](#️-infrastructure-as-code-terraform--aws)
 - [Project Screenshots](#-project-screenshots)
-- [Application & Dashboard Access](#-application--dashboard-access)
 - [Deployment Guide](#-deployment-guide)
 - [Monitoring Setup](#-monitoring-setup)
 - [Logging Setup](#-logging-setup)
 - [Troubleshooting Guide](#️-troubleshooting-guide)
 - [Future Enhancements](#-future-enhancements)
 - [Lessons Learned](#-lessons-learned)
-- [License](#-license)
 - [Author](#-author)
 
----
+
+## 🌐 EcoSmart Platform Preview
+
+![EcoSmart UI](docs/screenshots/frontend/37-ecosmart-frontend-ui.png)
 
 # 🏗️ System Architecture
 
@@ -155,9 +148,6 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
                      │       Loki + Promtail          │
                      └────────────────────────────────┘
 ```
-
----
-
 ## 🧠 Architecture Highlights
 
 - Fully containerized microservice deployment
@@ -168,7 +158,6 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 - Cloud-native observability stack
 - Centralized logging architecture
 - AWS remote Terraform backend configuration
-
 ---
 
 # 🛠️ Technology Stack
@@ -193,12 +182,10 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 | Networking | NGINX Ingress Controller, Ngrok |
 | Project Management | Jira |
 
----
 
 # ✨ Key Features
 
 ## 🚀 CI/CD Automation
-
 - Automated Jenkins pipeline execution
 - GitHub webhook-triggered deployments
 - Continuous Integration & Continuous Deployment workflow
@@ -208,7 +195,6 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 ---
 
 ## ☁️ Infrastructure as Code (IaC)
-
 - Terraform-based AWS infrastructure provisioning
 - Remote Terraform state management using S3
 - State locking using DynamoDB
@@ -218,7 +204,6 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 ---
 
 ## 🐳 Containerization & Orchestration
-
 - Dockerized backend and frontend services
 - Kubernetes-based container orchestration
 - NGINX Ingress Controller integration
@@ -228,7 +213,6 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 ---
 
 ## 🔐 DevSecOps & Security
-
 - SonarQube static code analysis
 - Trivy container image vulnerability scanning
 - OWASP Dependency Check integration
@@ -238,7 +222,6 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 ---
 
 ## 📊 Monitoring & Observability
-
 - Prometheus metrics collection
 - Grafana dashboard visualization
 - Spring Boot Actuator integration
@@ -249,26 +232,34 @@ Developer → GitHub → Jenkins CI/CD Pipeline → Security Scanning → Docker
 
 ---
 
+## 📦 Cloud & Deployment
+- AWS EC2 deployment
+- S3 backend storage for Terraform state
+- DynamoDB state locking
+- Kubernetes-based deployment architecture
+- Scalable cloud-native infrastructure
+
 # 📁 Project Structure
 
 ```text
 EcoSmart/
 │
-├── backend/
-├── frontend/
-├── kubernetes/
+├── backend/                         # Spring Boot backend application
+├── frontend/                        # React + Vite frontend application
+│
+├── kubernetes/                      # Kubernetes manifests
 │   ├── backend/
 │   ├── frontend/
 │   ├── ingress/
 │   ├── monitoring/
 │   └── mysql/
 │
-├── terraform/
-├── terraform-aws/
+├── terraform/                       # Terraform Docker provisioning
+├── terraform-aws/                   # Terraform AWS infrastructure
 │   └── modules/
 │       └── ec2/
 │
-├── docs/
+├── docs/                            # Project documentation
 │   ├── architecture/
 │   ├── diagrams/
 │   ├── monitoring/
@@ -277,15 +268,18 @@ EcoSmart/
 │   ├── setup-guides/
 │   └── screenshots/
 │
-├── Jenkinsfile
-├── docker-compose.yml
-├── README.md
+├── Jenkinsfile                      # CI/CD pipeline definition
+├── docker-compose.yml               # Local multi-container setup
+├── README.md                        # Main project documentation
 └── .gitignore
 ```
 
----
 
 # 🔄 CI/CD Pipeline Workflow
+
+The project implements a fully automated Jenkins-based CI/CD pipeline integrated with GitHub webhooks.
+
+---
 
 ## 🚀 Pipeline Flow
 
@@ -338,9 +332,12 @@ Monitoring & Logging Integration
 | Kubernetes Deploy | Deploy workloads to Kubernetes |
 | Monitoring Integration | Prometheus/Grafana monitoring |
 
----
 
 # 🔐 DevSecOps Security Workflow
+
+Security was integrated throughout the CI/CD lifecycle following DevSecOps best practices.
+
+---
 
 ## 🛡️ Security Implementations
 
@@ -351,17 +348,23 @@ Monitoring & Logging Integration
 - Security hotspot analysis
 - Quality Gate enforcement
 
+---
+
 ### 🚨 OWASP Dependency Check
 - Dependency vulnerability analysis
 - CVE identification
 - Supply chain security scanning
 - Vulnerable package detection
 
+---
+
 ### 🐳 Trivy Container Scanning
 - Docker image vulnerability scanning
 - OS package scanning
 - Secret scanning
 - Misconfiguration detection
+
+---
 
 ### 🔑 Kubernetes Security
 - Kubernetes Secrets for sensitive data
@@ -374,9 +377,12 @@ Monitoring & Logging Integration
 
 Security scanning is integrated directly into the CI/CD pipeline before deployment, ensuring vulnerabilities are detected early in the software delivery lifecycle.
 
----
 
 # 📊 Monitoring & Observability
+
+The project implements a complete cloud-native observability stack for monitoring application health, Kubernetes workloads, infrastructure metrics, and centralized logging.
+
+---
 
 ## 📈 Monitoring Stack
 
@@ -384,12 +390,45 @@ Security scanning is integrated directly into the CI/CD pipeline before deployme
 |---|---|
 | Prometheus | Metrics collection |
 | Grafana | Metrics visualization |
-| Alertmanager | Alert handling |
-| Spring Boot Actuator | Application metrics |
-| Micrometer | Prometheus integration |
-| kube-state-metrics | Kubernetes metrics |
-| Metrics Server | Resource metrics |
-| HPA | Autoscaling |
+| Alertmanager | Alert handling & routing |
+| Spring Boot Actuator | Application health & metrics |
+| Micrometer | Prometheus metrics integration |
+| kube-state-metrics | Kubernetes object metrics |
+| Metrics Server | Kubernetes resource metrics |
+| HPA | Horizontal pod autoscaling |
+
+---
+
+## 🔍 Metrics Collected
+
+### Application Metrics
+- JVM memory usage
+- CPU utilization
+- HTTP request count
+- Request latency
+- Active threads
+- Garbage collection metrics
+
+---
+
+### Kubernetes Metrics
+- Pod health
+- Deployment status
+- Resource utilization
+- Node metrics
+- Cluster health
+
+---
+
+## 🚨 Alerting
+
+Prometheus Alert Rules and Alertmanager were configured to monitor:
+
+- Service availability
+- Pod health
+- Kubernetes target failures
+- Resource usage thresholds
+- Backend service downtime
 
 ---
 
@@ -404,16 +443,20 @@ Grafana dashboards were created for:
 - Prometheus targets
 - Infrastructure observability
 
----
+
 
 # 📝 Centralized Logging
+
+The project implements centralized Kubernetes logging using Loki and Promtail.
+
+---
 
 ## 📦 Logging Stack
 
 | Tool | Purpose |
 |---|---|
 | Loki | Log aggregation |
-| Promtail | Log collection |
+| Promtail | Log collection agent |
 | Grafana | Log visualization |
 
 ---
@@ -432,18 +475,43 @@ Grafana Visualizes Logs
 
 ---
 
+## 📌 Log Sources
+
+Logs are collected from:
+
+- Spring Boot backend containers
+- Frontend containers
+- Kubernetes workloads
+- Cluster services
+
+---
+
+## 🔍 Log Analysis
+
+Grafana Explore was used for:
+
+- Pod log inspection
+- Backend troubleshooting
+- Kubernetes debugging
+- Error tracking
+- Runtime observability
+
 # ☸️ Kubernetes Deployment
+
+The application was deployed using Kubernetes on Minikube with production-style deployment architecture.
+
+---
 
 ## 📦 Kubernetes Components
 
 | Resource | Purpose |
 |---|---|
-| Deployments | Workload management |
-| Services | Networking |
-| Ingress | External routing |
-| ConfigMaps | Configuration |
-| Secrets | Sensitive data |
-| HPA | Autoscaling |
+| Deployments | Application workload management |
+| Services | Internal networking |
+| Ingress | External traffic routing |
+| ConfigMaps | Environment configuration |
+| Secrets | Sensitive data management |
+| HPA | Automatic pod scaling |
 
 ---
 
@@ -458,116 +526,421 @@ Grafana Visualizes Logs
 
 ---
 
+## 🌐 Ingress Controller
+
+NGINX Ingress Controller was used for:
+
+- HTTP routing
+- Reverse proxy
+- External application access
+- Path-based routing
+
+---
+
+## 📈 Horizontal Pod Autoscaler (HPA)
+
+HPA was configured to automatically scale backend pods based on CPU utilization metrics.
+
+---
+
+## 🔍 Kubernetes Commands
+
+### View Pods
+
+```bash
+kubectl get pods -A
+```
+
+### View Services
+
+```bash
+kubectl get svc -A
+```
+
+### View Deployments
+
+```bash
+kubectl get deployments -A
+```
+
+### View Ingress
+
+```bash
+kubectl get ingress -A
+```
+
+
 # ☁️ Infrastructure as Code (Terraform + AWS)
+
+Terraform was used to provision and manage AWS cloud infrastructure following Infrastructure as Code (IaC) best practices.
+
+---
 
 ## 🏗️ AWS Services Used
 
 | AWS Service | Purpose |
 |---|---|
-| EC2 | Compute infrastructure |
-| S3 | Terraform remote state |
-| DynamoDB | State locking |
-| IAM | Access management |
+| EC2 | Application infrastructure |
+| S3 | Remote Terraform state storage |
+| DynamoDB | Terraform state locking |
+| IAM | Cloud access management |
 | Security Groups | Network security |
 
 ---
 
-## 📦 Terraform Features
+## 📦 Terraform Features Implemented
 
+- Modular Terraform architecture
 - Remote state backend
-- State locking
-- EC2 provisioning
-- Dynamic security groups
-- Modular architecture
+- State locking with DynamoDB
+- Dynamic security group rules
+- EC2 provisioning automation
+- Infrastructure version control
 
 ---
+
+## 🔄 Terraform Workflow
+
+```text
+Terraform Init
+        ↓
+Terraform Validate
+        ↓
+Terraform Plan
+        ↓
+Terraform Apply
+        ↓
+AWS Infrastructure Provisioned
+```
+
+---
+
+## 🔒 Remote State Management
+
+Terraform remote backend was configured using:
+
+- S3 bucket for centralized state storage
+- DynamoDB table for state locking
+- Encrypted Terraform state management
+
+---
+
+## 📌 Terraform Commands
+
+### Initialize Terraform
+
+```bash
+terraform init
+```
+
+### Validate Configuration
+
+```bash
+terraform validate
+```
+
+### Plan Infrastructure
+
+```bash
+terraform plan
+```
+
+### Apply Infrastructure
+
+```bash
+terraform apply
+```
 
 # 📸 Project Screenshots
 
-## 🚀 Jenkins CI/CD Pipeline
-
-![Jenkins Dashboard](docs/screenshots/jenkins/08-ecosmart-jenkins-dashboard.png)
-
-![Jenkins Pipeline](docs/screenshots/jenkins/09-ecosmart-jenkins-pipeline-success.png)
+This section showcases the complete DevSecOps workflow, infrastructure provisioning, Kubernetes orchestration, monitoring, logging, and security automation implemented in the EcoSmart platform.
 
 ---
 
-## ☸️ Kubernetes Cluster
+# 🐳 Docker Environment
+
+## Docker Engine Running
+
+![Docker Running](docs/screenshots/docker/01-ecosmart-docker-running.png)
+
+---
+
+## Docker Containers
+
+![Docker Containers](docs/screenshots/docker/31-ecosmart-docker-containers.png)
+
+---
+
+## Docker Images
+
+![Docker Images](docs/screenshots/docker/32-ecosmart-docker-images.png)
+
+---
+
+# ☸️ Kubernetes Cluster Setup
+
+## Minikube Cluster Status
+
+![Minikube Status](docs/screenshots/kubernetes/02-ecosmart-minikube-status.png)
+
+---
+
+## NGINX Ingress Controller
+
+![Ingress Controller](docs/screenshots/kubernetes/03-ecosmart-ingress-controller.png)
+
+---
+
+## Kubernetes Pods
 
 ![Kubernetes Pods](docs/screenshots/kubernetes/04-ecosmart-kubernetes-pods.png)
 
+---
+
+## Kubernetes Services
+
 ![Kubernetes Services](docs/screenshots/kubernetes/05-ecosmart-kubernetes-services.png)
 
+---
+
+## Kubernetes Deployments
+
 ![Kubernetes Deployments](docs/screenshots/kubernetes/06-ecosmart-kubernetes-deployments.png)
+
+---
+
+## Kubernetes Ingress
 
 ![Kubernetes Ingress](docs/screenshots/kubernetes/07-ecosmart-kubernetes-ingress.png)
 
 ---
 
-## 📊 Monitoring & Observability
+## Horizontal Pod Autoscaler (HPA)
+
+![HPA](docs/screenshots/kubernetes/18-ecosmart-hpa-scaling.png)
+
+---
+
+## Minikube Dashboard
+
+![Minikube Dashboard](docs/screenshots/kubernetes/39-ecosmart-minikube-dashboard.png)
+
+---
+
+# 🚀 Jenkins CI/CD Pipeline
+
+## Jenkins Dashboard
+
+![Jenkins Dashboard](docs/screenshots/jenkins/08-ecosmart-jenkins-dashboard.png)
+
+---
+
+## Successful Jenkins Pipeline Execution
+
+![Jenkins Pipeline](docs/screenshots/jenkins/09-ecosmart-jenkins-pipeline-success.png)
+
+---
+
+## Jenkinsfile Repository Integration
+
+![Jenkinsfile](docs/screenshots/jenkins/34-ecosmart-github-jenkinsfile.png)
+
+---
+
+# 📊 Monitoring & Observability
+
+## Grafana Dashboard
 
 ![Grafana Dashboard](docs/screenshots/grafana/10-ecosmart-grafana-dashboard.png)
 
+---
+
+## JVM Monitoring Dashboard
+
+![JVM Dashboard](docs/screenshots/grafana/11-ecosmart-grafana-jvm-dashboard.png)
+
+---
+
+## Kubernetes Metrics Dashboard
+
+![Kubernetes Metrics](docs/screenshots/grafana/12-ecosmart-grafana-k8s-metrics.png)
+
+---
+
+## Prometheus Targets
+
 ![Prometheus Targets](docs/screenshots/monitoring/13-ecosmart-prometheus-targets.png)
 
+---
+
+## Prometheus Queries
+
+![Prometheus Query](docs/screenshots/monitoring/14-ecosmart-prometheus-query.png)
+
+---
+
+## Alertmanager
+
 ![Alertmanager](docs/screenshots/monitoring/15-ecosmart-alertmanager.png)
+
+---
+
+## Metrics Server
+
+![Metrics Server](docs/screenshots/monitoring/19-ecosmart-metrics-server.png)
+
+---
+
+## Ngrok Tunnel
+
+![Ngrok Tunnel](docs/screenshots/monitoring/36-ecosmart-ngrok-tunnel.png)
+
+---
+
+# 📝 Centralized Logging
+
+## Loki & Promtail Stack
+
+![Loki Promtail](docs/screenshots/logging/16-ecosmart-loki-promtail.png)
+
+---
+
+## Loki Log Analysis
 
 ![Loki Logs](docs/screenshots/logging/17-ecosmart-loki-logs.png)
 
 ---
 
-## 🔐 DevSecOps Security
+# 🔐 DevSecOps Security
 
-![SonarQube](docs/screenshots/security/20-ecosmart-sonarqube-dashboard.png)
+## SonarQube Dashboard
 
-![OWASP Report](docs/screenshots/security/24-ecosmart-owasp-report.png)
+![SonarQube Dashboard](docs/screenshots/security/20-ecosmart-sonarqube-dashboard.png)
+
+---
+
+## SonarQube Quality Gate
+
+![SonarQube Quality Gate](docs/screenshots/security/21-ecosmart-sonarqube-quality-gate.png)
+
+---
+
+## SonarQube Static Analysis
+
+![SonarQube Analysis](docs/screenshots/security/22-ecosmart-sonarqube-analysis.png)
+
+---
+
+## Additional SonarQube Analysis
+
+![SonarQube Analysis 2](docs/screenshots/security/22-ecosmart-sonarqube-analysis-2.png)
+
+---
+
+## Trivy Vulnerability Scan
 
 ![Trivy Scan](docs/screenshots/security/23-ecosmart-trivy-scan.png)
 
 ---
 
-## ☁️ AWS Infrastructure & Terraform
+## OWASP Dependency Check Report
+
+![OWASP Report](docs/screenshots/security/24-ecosmart-owasp-report.png)
+
+---
+
+## Additional OWASP Report
+
+![OWASP Report 2](docs/screenshots/security/24-ecosmart-owasp-report-2.png)
+
+---
+
+## AWS Security Group Configuration
+
+![AWS Security Group](docs/screenshots/security/30-ecosmart-aws-security-group.png)
+
+---
+
+# ☁️ Terraform & AWS Infrastructure
+
+## Terraform Plan
 
 ![Terraform Plan](docs/screenshots/terraform/25-ecosmart-terraform-plan.png)
 
+---
+
+## Terraform Apply
+
 ![Terraform Apply](docs/screenshots/terraform/26-ecosmart-terraform-apply.png)
+
+---
+
+## GitHub Repository
+
+![GitHub Repository](docs/screenshots/terraform/33-ecosmart-github-repo.png)
+
+---
+
+## Terraform GitHub Integration
+
+![Terraform GitHub](docs/screenshots/terraform/35-ecosmart-github-terraform.png)
+
+---
+
+# ☁️ AWS Infrastructure
+
+## AWS EC2 Instance
 
 ![AWS EC2](docs/screenshots/aws/27-ecosmart-aws-ec2.png)
 
 ---
 
-## 🌐 Application UI
+## AWS S3 Terraform Backend
 
-![Frontend UI](docs/screenshots/frontend/37-ecosmart-frontend-ui.png)
+![AWS S3](docs/screenshots/aws/28-ecosmart-aws-s3-backend.png)
+
+---
+
+## DynamoDB Terraform State Locking
+
+![AWS DynamoDB](docs/screenshots/aws/29-ecosmart-aws-dynamodb-lock.png)
+
+---
+
+# 🌐 Application UI
+
+## EcoSmart Frontend Application
+
+![EcoSmart Frontend](docs/screenshots/frontend/37-ecosmart-frontend-ui.png)
+
+---
+
+# 🔍 Backend Health Monitoring
+
+## Spring Boot Actuator Health Endpoint
 
 ![Backend Health](docs/screenshots/backend/38-ecosmart-backend-health.png)
 
 ---
 
-# 🌐 Application & Dashboard Access
-
-| Service | URL |
-|---|---|
-| Frontend Application | http://localhost:8081 |
-| Backend Health | http://localhost:8085/actuator/health |
-| Grafana Dashboard | http://localhost:3000 |
-| Prometheus | http://localhost:9091 |
-| Jenkins | http://localhost:9090 |
-
 ---
-
 # 🚀 Deployment Guide
 
 ## 📦 Clone Repository
 
 ```bash
-git clone https://github.com/errornotfound404ajit/ecosmart-devsecops-platform.git
-cd ecosmart-devsecops-platform
+git clone https://github.com/errornotfound404ajit/Smart.git
+
+cd Smart
 ```
 
 ---
 
 ## 🐳 Start Docker
+
+Ensure Docker Desktop is running before proceeding.
+
+Verify Docker:
 
 ```bash
 docker ps
@@ -581,6 +954,12 @@ docker ps
 minikube start --driver=docker
 ```
 
+Verify cluster:
+
+```bash
+kubectl get nodes
+```
+
 ---
 
 ## 🚀 Enable Kubernetes Addons
@@ -590,12 +969,16 @@ minikube addons enable ingress
 minikube addons enable metrics-server
 ```
 
----
-
 ## ☸️ Deploy Kubernetes Resources
 
 ```bash
 kubectl apply -R -f kubernetes/
+```
+
+Verify workloads:
+
+```bash
+kubectl get pods -A
 ```
 
 ---
@@ -614,7 +997,7 @@ http://localhost:8081
 
 ---
 
-## 🔍 Backend Health Endpoint
+## 🔍 Access Backend Health Endpoint
 
 ```bash
 kubectl port-forward svc/backend-service 8085:8081 -n smart-devops
@@ -625,8 +1008,6 @@ Open:
 ```text
 http://localhost:8085/actuator/health
 ```
-
----
 
 # 📊 Monitoring Setup
 
@@ -650,6 +1031,12 @@ helm install monitoring prometheus-community/kube-prometheus-stack -n monitoring
 kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
 ```
 
+Open:
+
+```text
+http://localhost:3000
+```
+
 ---
 
 ## 📉 Access Prometheus
@@ -658,7 +1045,11 @@ kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
 kubectl port-forward -n monitoring svc/prometheus-operated 9091:9090
 ```
 
----
+Open:
+
+```text
+http://localhost:9091
+```
 
 # 📝 Logging Setup
 
@@ -674,26 +1065,27 @@ helm install loki grafana/loki-stack -n monitoring
 
 ---
 
-## 🔍 Example LogQL Query
+## 🔍 View Logs in Grafana
+
+Open Grafana Explore and select Loki datasource.
+
+Example LogQL query:
 
 ```logql
 {namespace="smart-devops"}
 ```
-
----
-
 # 🛠️ Troubleshooting Guide
 
 ## ❌ Kubernetes Pods Stuck in Pending
+
+### Verify cluster status
 
 ```bash
 kubectl get nodes
 kubectl get pods -A
 ```
 
----
-
-## ❌ Restart Minikube
+### Restart Minikube
 
 ```bash
 minikube stop
@@ -702,7 +1094,15 @@ minikube start --driver=docker
 
 ---
 
-## ❌ Grafana Not Accessible
+## ❌ Grafana Dashboard Not Accessible
+
+### Verify monitoring namespace
+
+```bash
+kubectl get pods -n monitoring
+```
+
+### Restart port-forward
 
 ```bash
 kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
@@ -710,15 +1110,63 @@ kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
 
 ---
 
+## ❌ Prometheus Targets Down
+
+### Verify ServiceMonitor
+
+```bash
+kubectl get servicemonitor -A
+```
+
+### Reapply monitoring manifests
+
+```bash
+kubectl apply -f kubernetes/monitoring/
+```
+
+---
+
+## ❌ Jenkins Pipeline Failure
+
+### Verify Jenkins logs
+
+```bash
+kubectl logs deployment/jenkins
+```
+
+### Restart Jenkins deployment
+
+```bash
+kubectl rollout restart deployment jenkins
+```
+
+---
+
+## ❌ Docker Image Pull Issues
+
+### Verify local Docker images
+
+```bash
+docker images
+```
+
+### Load image into Minikube
+
+```bash
+minikube image load IMAGE_NAME
+```
+
+---
+
 ## ❌ Terraform Backend Errors
+
+### Reinitialize Terraform
 
 ```bash
 terraform init -reconfigure
 ```
 
----
-
-## ❌ Verify AWS Credentials
+### Verify AWS credentials
 
 ```bash
 aws configure
@@ -726,43 +1174,53 @@ aws configure
 
 ---
 
+## ❌ Loki Logs Not Visible
+
+### Verify Loki & Promtail
+
+```bash
+kubectl get pods -n monitoring
+```
+
+### Reinstall Loki stack
+
+```bash
+helm install loki grafana/loki-stack -n monitoring
+```
+
 # 🚀 Future Enhancements
+- Deploy application on managed Kubernetes clusters (EKS)
+- Implement GitHub Actions workflow
+- Add ArgoCD GitOps deployment
+- Integrate HashiCorp Vault for secrets management
+- Configure SSL/TLS using cert-manager
+- Add Redis caching layer
+- Implement centralized tracing using Jaeger
+- Add Slack/Email alert integrations
+- Implement blue-green and canary deployments
+- Add Kubernetes Network Policies
+- Deploy using Helm charts
+- Integrate Falco runtime security
+- Add Kubernetes RBAC hardening
+- Configure autoscaling using custom metrics
+- Multi-environment deployment strategy (Dev/Staging/Prod)
 
-- Deploy on Amazon EKS
-- Implement ArgoCD GitOps
-- Add GitHub Actions workflow
-- Integrate HashiCorp Vault
-- Implement Helm-based deployments
-- Configure SSL/TLS
-- Add Redis caching
-- Add Jaeger distributed tracing
-- Add Slack alert integration
-- Implement canary deployments
-
----
 
 # 📚 Lessons Learned
-
-- End-to-end DevSecOps workflow implementation
-- Kubernetes orchestration and deployment
-- Infrastructure as Code using Terraform
-- CI/CD automation using Jenkins
-- Security integration into pipelines
-- Monitoring and observability best practices
-- Centralized logging architecture
-- Cloud-native deployment workflows
-- Troubleshooting distributed systems
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
+- Learned end-to-end DevSecOps workflow implementation
+- Gained hands-on experience with Kubernetes orchestration
+- Understood Infrastructure as Code using Terraform
+- Implemented real-world CI/CD pipelines using Jenkins
+- Integrated security scanning into CI/CD lifecycle
+- Learned cloud-native monitoring and observability practices
+- Implemented centralized Kubernetes logging
+- Understood Docker containerization workflows
+- Configured Kubernetes ingress and networking
+- Learned Terraform remote state management
+- Implemented Kubernetes autoscaling using HPA
+- Gained troubleshooting experience across cloud-native systems
 
 # 👨‍💻 Author
-
 ## Ajit
 
 DevOps & Cloud Engineering Enthusiast passionate about:
@@ -780,10 +1238,15 @@ DevOps & Cloud Engineering Enthusiast passionate about:
 
 ## 📫 Connect With Me
 
-- GitHub: https://github.com/errornotfound404ajit
+- GitHub: https://github.com/errornotfound404ajit/Ecosmart-devsecops-platform
+
+
+---
 
 ---
 
 # ⭐ Support The Project
 
 If you found this project valuable, please consider starring the repository to support the work and help others discover it.
+
+---
