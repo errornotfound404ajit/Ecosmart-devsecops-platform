@@ -3,27 +3,10 @@
 A complete end-to-end cloud-native DevSecOps project implementing CI/CD automation, Infrastructure as Code (IaC), Kubernetes orchestration, monitoring, logging, security scanning, and automated deployment pipelines using modern DevOps tools and practices.
 
 ---
+## 🌐 EcoSmart Platform Preview
 
-## 📌 Project Overview
+![EcoSmart UI](docs/screenshots/frontend/37-ecosmart-frontend-ui.png)
 
-This project demonstrates a production-grade DevSecOps workflow for deploying and managing a Smart Home Management application using enterprise-level tools and cloud-native technologies.
-
-The platform integrates:
-
-- CI/CD automation with Jenkins
-- Infrastructure provisioning using Terraform
-- Containerization with Docker
-- Kubernetes orchestration with Minikube
-- Monitoring with Prometheus & Grafana
-- Logging with Loki & Promtail
-- Security scanning using Trivy, SonarQube, and OWASP Dependency Check
-- AWS cloud infrastructure deployment
-- Automated scaling using HPA
-- GitHub webhook-triggered deployment pipelines
-
-This project was designed to simulate a real-world enterprise DevSecOps environment.
-
----
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-623CE4?style=for-the-badge&logo=terraform)
 ![AWS](https://img.shields.io/badge/AWS-Cloud-orange?style=for-the-badge&logo=amazonaws)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?style=for-the-badge&logo=kubernetes)
@@ -58,9 +41,27 @@ This project was designed to simulate a real-world enterprise DevSecOps environm
 - [Author](#-author)
 
 
-## 🌐 EcoSmart Platform Preview
+## 📌 Project Overview
 
-![EcoSmart UI](docs/screenshots/frontend/37-ecosmart-frontend-ui.png)
+This project demonstrates a production-grade DevSecOps workflow for deploying and managing a Smart Home Management application using enterprise-level tools and cloud-native technologies.
+
+The platform integrates:
+
+- CI/CD automation with Jenkins
+- Infrastructure provisioning using Terraform
+- Containerization with Docker
+- Kubernetes orchestration with Minikube
+- Monitoring with Prometheus & Grafana
+- Logging with Loki & Promtail
+- Security scanning using Trivy, SonarQube, and OWASP Dependency Check
+- AWS cloud infrastructure deployment
+- Automated scaling using HPA
+- GitHub webhook-triggered deployment pipelines
+
+This project was designed to simulate a real-world enterprise DevSecOps environment.
+
+---
+
 
 # 🏗️ System Architecture
 
